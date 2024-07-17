@@ -52,13 +52,13 @@ const Home = () => {
                 data-aos-delay="200"
                 className="flex items-center gap-6 mt-7"
               >
-                <a href="#contact">
+                <a href="/contact">
                   <button className="bg-primaryColor text-white font-[500] flex items-center gap-2 ease-in duration-300 py-2 px-4 rounded-[8px] hover:-translate-y-1">
                     <i className="ri-mail-line"></i>Hire Me
                   </button>
                 </a>
                 <a
-                  href="#projects"
+                  href="/projects"
                   className="text-smallTextColor font-[600] text-[16px] border-b border-solid border-smallTextColor hover:-translate-y-1"
                 >
                   <i className="ri-scroll-to-bottom-fill"></i>see projects

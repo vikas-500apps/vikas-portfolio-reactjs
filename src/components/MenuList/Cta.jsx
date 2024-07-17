@@ -41,9 +41,9 @@ const ContactModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const serviceID = 'YOUR_SERVICE_ID'; // Replace with your service ID
-    const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID
-    const userID = 'YOUR_USER_ID'; // Replace with your user ID
+    const serviceID = 'service_gb3uz9r'; // Replace with your service ID
+    const templateID = 'template_pizvk9w'; // Replace with your template ID
+    const userID = 'xwfqoUCOekUT23Bt0'; // Replace with your user ID
 
     emailjs.send(serviceID, templateID, formData, userID)
       .then((response) => {
