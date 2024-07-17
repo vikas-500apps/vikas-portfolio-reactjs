@@ -1,7 +1,7 @@
 import React from "react";
-
+import error from "../assets/images/error-page.mp4"
 const ErrorPage = () => {
-  const videoUrl = "https://cdn.prod.website-files.com/64354b8ce4872ad8cd1c7b04/65f06269dfe44d1c5e8eae08_cgpt_404-transcode.mp4";
+  const videoUrl = error
 
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center relative">
