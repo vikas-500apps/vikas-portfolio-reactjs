@@ -1,61 +1,94 @@
-## Portfolio README
-Welcome to my portfolio! This repository showcases various projects and tasks I've worked on recently, demonstrating my skills and expertise in web development.
+# Personal Portfolio Website
 
-## Available Scripts
+Welcome to my Personal Portfolio Website! This project showcases my skills, education, experience, and includes a contact form for reaching out. The website is built with HTML, CSS, and JavaScript, and uses `emailjs` for sending messages directly from the contact form.
 
-In the project directory, you can run:
+## Components
 
-### `npm start`
+1. **Header**
+   - Contains the navigation menu and branding.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Footer**
+   - Provides additional links and contact information.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **MenuList-**
+   **AboutMe**
+   - Shared my experience
 
-### `npm test`
+   **Project**
+   - Displays a list of projects, showcasing work and achievements.
+   
+   **Education and Experience**
+   - Highlights educational background and professional experience.
+   
+   **Skills**
+   - Lists technical and soft skills.
+   
+   **Contact Form**
+   - Allows users to get in touch via email using `emailjs`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Use EmailJS
 
-### `npm run build`
+EmailJS is used in the contact form to send emails directly from the website without exposing server-side email handling. Below is a brief overview of how `emailjs` is integrated:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Contact Form
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Setup EmailJS Account**
+   - Sign up at [EmailJS](https://www.emailjs.com/) and obtain your user ID and service ID.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Include EmailJS Library**
+   - Add the EmailJS library to your project by including the script tag in your HTML:
+     ```html
+     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+     ```
 
-### `npm run eject`
+3. **Initialize EmailJS**
+   - Initialize EmailJS with your user ID in your JavaScript file:
+     ```javascript
+     emailjs.init('YOUR_USER_ID');
+     ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Sending Emails**
+   - Configure the contact form to send emails using the `emailjs.send` method:
+     ```javascript
+     function sendEmail(event) {
+       event.preventDefault();
+       
+       emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target)
+         .then((result) => {
+           console.log('Email sent successfully:', result);
+         }, (error) => {
+           console.error('Email sending failed:', error);
+         });
+     }
+     ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5.  **Replace Placeholder Values:**
+   - Replace `'YOUR_USER_ID'`, `'YOUR_SERVICE_ID'`, and `'YOUR_TEMPLATE_ID'` with your actual EmailJS user ID, service ID, and template ID.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. **Form HTML**
+   - Your contact form HTML should have the necessary fields and use the `sendEmail` function to handle form submission:
+     ```html
+     <form onsubmit="sendEmail(event)">
+       <input type="text" name="name" placeholder="Your Name" required />
+       <input type="email" name="email" placeholder="Your Email" required />
+       <textarea name="message" placeholder="Your Message" required></textarea>
+       <button type="submit">Send</button>
+     </form>
+     ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ErrorPage
+   -The ErrorPage component displays a user-friendly error page for handling 404 errors, indicating that the requested page could not be found. This component is styled to be responsive and visually appealing, ensuring a good user experience even in error scenarios.
+   **Features**
+   1.Full-Screen Layout: The error page covers the entire viewport height and width.
+   2.Centered Content: The content is centered both vertically and horizontally.
+   3.Customizable Background: Optionally, a video background can be used (currently commented out).
+   4.Error Message: Clearly communicates the 404 error and the possible reasons for the error.
+   5.Navigation Link: Provides a button to redirect users to the homepage.
 
-## Learn More
+   **Installation**
+   1.Ensure you have react and react-router-dom installed in your project.
+   2.Import the ErrorPage component into your React application where needed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Projects
-Description: Developed a virtual reality (VR) booking form allowing users to book appointments and receive OTP verification.
-Technologies: Vue.js, TypeScript, REST API integration.
-
-## Features:
-Video background with error message overlay.
-Responsive design for seamless viewing on various devices.
-Contact Modal Component
-Description: Implemented a reusable contact modal component for user interaction.
-Technologies: React, email.js, Toastify.
-
-## Features:
-Contact form with name, email, and message fields.
-Real-time email submission using email.js integration.
-Dynamic image display with interval change.
+## Connect with Me
+LinkedIn: [Vikas Kulari](https://www.linkedin.com/in/vikas-kulari-16013b198)
+Portfolio: https://vikas-kulari.netlify.app

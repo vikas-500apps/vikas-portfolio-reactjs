@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import portfolios from "../../assets/data/portfolioData";
 
-const Modal = ({ activeID, setShowModal }) => {
+const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
   const projectDetail = portfolios.find((project) => project.id === activeID);
 
   useEffect(() => {
     document.body.classList.add("no-scroll"); // Disable background scrolling when the modal is open
+    openModal();
+
     return () => {
       document.body.classList.remove("no-scroll"); // Remove the class when the component unmounts
+      closeModal();
     };
-  }, []);
+  }, [openModal, closeModal]);
 
   if (!projectDetail) {
     return null; // Return null if project detail is not found
@@ -24,7 +27,7 @@ const Modal = ({ activeID, setShowModal }) => {
 
   return (
     <div className="w-full h-full fixed top-0 left-0 z-10" style={overlayStyle}>
-      <div className="max-w-[95%] sm:max-w-[600px] lg:w-1/2 lg:p-8 w-full h-[80vh] p-[30px] overflow-auto modal-scroll absolute top-1/2 left-1/2 z-20 bg-white rounded-lg transform -translate-x-1/2 -translate-y-1/2 border-2 border-primaryColor">
+      <div className="max-w-[90%] sm:max-w-[800px] lg:w-3/4 lg:p-10 w-full h-[83vh] p-[40px] overflow-auto modal-scroll absolute top-1/2 left-1/2 z-20 bg-white rounded-lg transform -translate-x-1/2 -translate-y-1/2 border-2 border-primaryColor">
         <div className="relative">
           <figure className="border-2 border-primaryColor rounded-lg overflow-hidden">
             <img
@@ -49,7 +52,7 @@ const Modal = ({ activeID, setShowModal }) => {
         </div>
 
         <div>
-          <h2 className="text-2xl text-headingColor font-bold my-2">
+          <h2 className="text-3xl text-headingColor font-bold my-2">
             {projectDetail.title}
           </h2>
 

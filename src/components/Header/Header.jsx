@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/images/logo.png";
-import Resume from "../../assets/resume.pdf";
 
 const Header = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("");
@@ -12,7 +11,7 @@ const Header = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = Resume;
+    link.href = "/resume.pdf"; // Reference to the public folder
     link.download = "Resume.pdf";
     link.target = "_blank";
     link.click();
@@ -27,7 +26,7 @@ const Header = () => {
               <img src={image} alt="Logo" />
             </span>
             <ul className="hidden md:flex items-center gap-10">
-              {["about", "experience", "projects", "contact"].map((item) => (
+              {["about", "experience", "skills", "projects", "contact"].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item}`}
@@ -57,6 +56,7 @@ const Header = () => {
             {[
               { name: "about", icon: "ri-user-line" },
               { name: "experience", icon: "ri-graduation-cap-line" },
+              { name: "skills", icon: "ri-lightbulb-flash-line" },
               { name: "projects", icon: "ri-briefcase-line" },
               { name: "contact", icon: "ri-mail-line" },
             ].map((item) => (

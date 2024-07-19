@@ -4,10 +4,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gray-900 mt-auto">
-      <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4 py-5">
+      <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4 py-5 mb-[70px] lg:mb-0">
         <div className="md:flex justify-between items-center">
           <p className="text-white text-base font-medium md:mb-0 mb-3">
-            © Copyright {currentYear} vikaskulari.in All rights reserved.
+            © Copyright {currentYear} <a
+              href="https://vikas-kulari.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              vikas-kulari.netlify.app
+            </a> All rights reserved.
           </p>
           <div className="flex space-x-3">
             <a

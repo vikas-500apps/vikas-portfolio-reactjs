@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../../assets/data/portfolioData";
 import Modal from "./Modal";
 
-const RecentProjects = () => {
+const RecentProjects = ({ openModal, closeModal }) => {
   const [nextItems, setNextItems] = useState(10);
   const [showModal, setShowModal] = useState(false);
   const [activeID, setActiveID] = useState(null);
@@ -27,7 +27,7 @@ const RecentProjects = () => {
                 data-aos="fade-right"
                 data-aos-duration="1900"
               >
-                Recent Projects
+                Projects
               </span>
             </h1>
             <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-[1.7]">
@@ -88,7 +88,8 @@ const RecentProjects = () => {
           )}
         </div>
 
-        {showModal && <Modal setShowModal={setShowModal} activeID={activeID} />}
+        {showModal && <Modal setShowModal={setShowModal} activeID={activeID} openModal={openModal}
+              closeModal={closeModal} />}
       </section>
     </>
   );
