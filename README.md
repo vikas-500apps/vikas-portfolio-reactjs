@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-Welcome to my Personal Portfolio Website! This project showcases my skills, education, experience, and includes a contact form for reaching out. The website is built with HTML, CSS, and JavaScript, and uses `emailjs` for sending messages directly from the contact form.
+Welcome to my Personal Portfolio Website! This project showcases my skills, education, experience, and includes a contact form for reaching out. The website is built with HTML, CSS, JavaScript, ReactJs and uses `emailjs` for sending messages directly from the contact form.
 
 ## Components
 
