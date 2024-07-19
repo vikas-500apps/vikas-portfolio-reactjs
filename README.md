@@ -77,18 +77,19 @@ EmailJS is used in the contact form to send emails directly from the website wit
      ```
 
 ## ErrorPage
-   -The ErrorPage component displays a user-friendly error page for handling 404 errors, indicating that the requested page could not be found. This component is styled to be responsive and visually appealing, ensuring a good user experience even in error scenarios.
-   **Features**
-   1.Full-Screen Layout: The error page covers the entire viewport height and width.
-   2.Centered Content: The content is centered both vertically and horizontally.
-   3.Customizable Background: Optionally, a video background can be used (currently commented out).
-   4.Error Message: Clearly communicates the 404 error and the possible reasons for the error.
-   5.Navigation Link: Provides a button to redirect users to the homepage.
+- The ErrorPage component displays a user-friendly error page for handling 404 errors, indicating that the requested page could not be found. This component is styled to be responsive and visually appealing, ensuring a good user experience even in error scenarios.
 
-   **Installation**
-   1.Ensure you have react and react-router-dom installed in your project.
-   2.Import the ErrorPage component into your React application where needed.
+**Features**
+1.Full-Screen Layout: The error page covers the entire viewport height and width.
+2.Centered Content: The content is centered both vertically and horizontally.
+3.Customizable Background: Optionally, a video background can be used (currently commented out).
+4.Error Message: Clearly communicates the 404 error and the possible reasons for the error.
+5.Navigation Link: Provides a button to redirect users to the homepage.
+
+**Installation**
+1.Ensure you have react and react-router-dom installed in your project.
+2.Import the ErrorPage component into your React application where needed.
 
 ## Connect with Me
-LinkedIn: [Vikas Kulari](https://www.linkedin.com/in/vikas-kulari-16013b198)
-Portfolio: https://vikas-kulari.netlify.app
+- LinkedIn: [Vikas Kulari](https://www.linkedin.com/in/vikas-kulari-16013b198)
+- Portfolio: https://vikas-kulari.netlify.app
