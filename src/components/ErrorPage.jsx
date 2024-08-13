@@ -1,30 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import error from "../assets/images/error-page.mp4"
 const ErrorPage = () => {
-  // const videoUrl = error
-
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center relative">
-      {/* <video autoPlay muted loop className="w-full h-full object-cover">
-        <source src={videoUrl} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white p-4 md:p-8">
-        <div className="text-left md:text-center">
-          <h1 className="text-3xl md:text-6xl font-bold mb-4">Oops! Error 404</h1>
-          <p className="text-lg md:text-xl px-4 mb-6">
-            The page you are looking for might have been removed, had its name changed,
-            or is temporarily unavailable.
-          </p>
-          <Link
-            to="/"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-lg"
-          >
-            Go to Home
-          </Link>
-        </div>
+    <div className="relative flex items-center justify-center min-h-screen bg-black">
+      <div className="relative flex flex-col items-center justify-center text-center text-white p-4 md:p-8 bg-black bg-opacity-50" style={{ height: '60vh', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }}>
+        <h1 className="text-8xl font-bold mb-4">404</h1>
+        <video
+          autoPlay
+          muted
+          loop
+          className="w-full h-full object-cover"
+          src="/error-page.mp4"
+          type="video/mp4"
+        />
+        <h3 className="text-4xl font-bold mb-1">Look like you're lost</h3>
+        <p className="text-lg mb-6">The page you are looking for is not available!</p>
+        <Link
+          to="/"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+        >
+          Go to Home
+        </Link>
       </div>
     </div>
   );
