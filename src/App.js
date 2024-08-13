@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/MenuList/AboutMe";
 import Projects from "./components/MenuList/Projects";
 import Skills from "./components/MenuList/Skills"
-import EducationExperience from "./components/MenuList/EducationAndExperince";
+import EducationAndExperience from "./components/MenuList/EducationAndExperience";
 import Contact from "./components/MenuList/Contact";
 import ContactModal from "./components/MenuList/ContactModal";
 import ErrorPage from "./components/ErrorPage";
@@ -52,7 +52,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<Home />} />
-            <Route path="/experience" element={<EducationExperience />} />
+            <Route path="/experience" element={<EducationAndExperience />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects openModal={openModal} closeModal={closeModal} />} />
             <Route path="/contact" element={<Contact />} />

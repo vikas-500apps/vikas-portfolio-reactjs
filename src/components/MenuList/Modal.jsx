@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import portfolios from "../../assets/data/portfolioData";
+import {portfolios} from "../../assets/data/portfolioData";
 
 const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
   const projectDetail = portfolios.find((project) => project.id === activeID);
@@ -27,9 +27,9 @@ const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
 
   return (
     <div className="w-full h-full fixed top-0 left-0 z-10" style={overlayStyle}>
-      <div className="max-w-[90%] sm:max-w-[800px] lg:w-3/4 lg:p-10 w-full h-[83vh] p-[40px] overflow-auto modal-scroll absolute top-1/2 left-1/2 z-20 bg-white rounded-lg transform -translate-x-1/2 -translate-y-1/2 border-2 border-primaryColor">
+      <div className="max-w-[90%] sm:max-w-[800px] lg:w-3/4 lg:p-10 w-full h-[83vh] p-[40px] overflow-auto modal-scroll absolute top-1/2 left-1/2 z-20 bg-gray-50 rounded-lg transform -translate-x-1/2 -translate-y-1/2 border-2 border-gray-300">
         <div className="relative">
-          <figure className="border-2 border-primaryColor rounded-lg overflow-hidden">
+          <figure className="border-2 border-gray-200 rounded-lg overflow-hidden">
             <img
               className="w-full object-cover"
               src={projectDetail.imgUrl}
@@ -39,18 +39,21 @@ const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
               href={projectDetail.siteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-0 right-0 m-4"
+              className="absolute bottom-0 right-0 m-4 inline-flex items-center gap-x-1.5 rounded-full px-3 py-1 text-xs font-medium text-red-500 ring-1 ring-inset ring-red-500 transition hover:bg-red-50 ease-in-out duration-300"
             >
-              <button className="relative bg-red-100 text-red-700 py-2 px-4 rounded-md font-medium border-2 border-red-700 transition ease-in-out duration-300 flex items-center justify-center transform hover:-translate-y-1">
-                <span className="relative mr-1">
-                  <span className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-red-700 w-3 h-3 rounded-full animate-pulse"></span>
-                </span>
-                <span className="inline-block px-2">Live Site</span>
-              </button>
+              <span className="relative flex items-center justify-center">
+                <svg
+                  viewBox="0 0 6 6"
+                  aria-hidden="true"
+                  className="h-2 w-2 fill-red-500 animate-pulse"
+                >
+                  <circle r={3} cx={3} cy={3} />
+                </svg>
+              </span>
+              <span>Live Site</span>
             </a>
           </figure>
         </div>
-
         <div>
           <h2 className="text-3xl text-headingColor font-bold my-2">
             {projectDetail.title}
@@ -68,7 +71,7 @@ const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
             {projectDetail.technologies.map((item, index) => (
               <span
                 key={index}
-                className="bg-purple-50 text-primaryColor py-1.5 px-3 rounded-md text-sm leading-none border-2 border-primaryColor hover:-translate-y-1 cursor-pointer"
+                className="bg-gray-50 text-gray-700 py-1.5 px-3 rounded-md text-sm leading-none border-2 border-gray-300 hover:-translate-y-1 cursor-pointer"
               >
                 {item}
               </span>
@@ -77,7 +80,7 @@ const Modal = ({ activeID, setShowModal, openModal, closeModal }) => {
         </div>
         <button
           onClick={() => setShowModal(false)}
-          className="w-8 h-8 bg-white absolute top-4 right-4 text-xl flex items-center justify-center rounded-md leading-none cursor-pointer border-2 border-primaryColor"
+          className="w-8 h-8 bg-white absolute top-4 right-4 text-xl flex items-center justify-center rounded-md leading-none cursor-pointer border-2 border-gray-300"
         >
           &times;
         </button>

@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import image from "../../assets/images/logo.png";
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState("");
+  const location = useLocation();
+  const [activeMenuItem, setActiveMenuItem] = useState('');
 
-  const handleMenuItemClick = (menuItem) => {
-    setActiveMenuItem(menuItem);
-  };
+  useEffect(() => {
+    const path = location.pathname.split('/')[1];
+    setActiveMenuItem(path || 'about'); // Default to 'about' if path is empty
+  }, [location.pathname]);
 
   const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Reference to the public folder
-    link.download = "Resume.pdf";
-    link.target = "_blank";
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Reference to the public folder
+    link.download = 'Resume.pdf';
+    link.target = '_blank';
     link.click();
   };
 
@@ -23,17 +24,16 @@ const Header = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-[10px]">
             <span className="w-[35px] h-[35px] text-white text-[18px] font-[500] flex items-center justify-center">
-              <img src={image} alt="Logo" />
+              <img src={'/images/logo.png'} alt="Logo" />
             </span>
             <ul className="hidden md:flex items-center gap-10">
-              {["about", "experience", "skills", "projects", "contact"].map((item) => (
+              {['about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item}`}
-                    className={`text-smallTextColor font-[600] hover:text-primaryColor transition duration-300 ${
-                      activeMenuItem === item ? "text-primaryColor" : ""
+                    className={`font-[600] hover:text-primaryColor transition duration-300 ${
+                      activeMenuItem === item ? 'text-primaryColor' : 'text-smallTextColor'
                     }`}
-                    onClick={() => handleMenuItemClick(item)}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </Link>
@@ -50,25 +50,24 @@ const Header = () => {
         </div>
       </header>
 
-      <div className="md:hidden fixed bottom-0 left-0 w-full bg-white/60 z-10 backdrop-blur-md">
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-white z-10 backdrop-blur-md">
         <div className="container mx-auto px-4">
           <ul className="flex justify-around items-center py-2">
             {[
-              { name: "about", icon: "ri-user-line" },
-              { name: "experience", icon: "ri-graduation-cap-line" },
-              { name: "skills", icon: "ri-lightbulb-flash-line" },
-              { name: "projects", icon: "ri-briefcase-line" },
-              { name: "contact", icon: "ri-mail-line" },
+              { name: 'about', icon: 'ri-user-line' },
+              { name: 'experience', icon: 'ri-graduation-cap-line' },
+              { name: 'skills', icon: 'ri-lightbulb-flash-fill' },
+              { name: 'projects', icon: 'ri-briefcase-line' },
+              { name: 'contact', icon: 'ri-mail-line' },
             ].map((item) => (
               <li key={item.name}>
                 <Link
                   to={`/${item.name}`}
-                  className={`text-smallTextColor font-[600] hover:text-primaryColor transition duration-300 flex flex-col items-center ${
-                    activeMenuItem === item.name ? "text-primaryColor" : ""
+                  className={`font-[600] hover:text-primaryColor transition duration-300 flex flex-col items-center ${
+                    activeMenuItem === item.name ? 'text-primaryColor' : 'text-smallTextColor'
                   }`}
-                  onClick={() => handleMenuItemClick(item.name)}
                 >
-                  <i className={`${item.icon} text-xl`}></i>
+                  <i className={`${item.icon} text-2xl`} />
                   <span className="block text-xs capitalize">{item.name}</span>
                 </Link>
               </li>

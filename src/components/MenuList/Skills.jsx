@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import HTML5 from '../../assets/images/skills/html5-48.png';
-import css3 from '../../assets/images/skills/css3-48.png';
-import typescript from '../../assets/images/skills/typescript-48.png';
-import javascript from '../../assets/images/skills/javascript-48.png';
-import vueJs from '../../assets/images/skills/vue-js-48.png';
-import nodejs from '../../assets/images/skills/nodejs-48.png';
-import nuxtJs from '../../assets/images/skills/nuxt-js-48.png';
-import tailwind from '../../assets/images/skills/tailwind-css-48.png';
-import react from '../../assets/images/skills/react-48.png';
-import python from '../../assets/images/skills/python-48.png';
-import mongoDb from '../../assets/images/skills/mongo-db-48.png';
 
 const skills = [
-  { name: 'HTML', img: HTML5 },
-  { name: 'CSS', img: css3 },
-  { name: 'JavaScript', img: javascript },
-  { name: 'TypeScript', img: typescript },
-  { name: 'Vue.js', img: vueJs },
-  { name: 'Nuxt.js', img: nuxtJs },
-  { name: 'Node.js', img: nodejs },
-  { name: 'Tailwind CSS', img: tailwind },
-  { name: 'MongoDB', img: mongoDb },
-  { name: 'Python', img: python },
-  { name: 'React.js', img: react },
+  { name: 'HTML', img: '/images/skills/html5.png' },
+  { name: 'CSS', img: '/images/skills/css3.png' },
+  { name: 'JavaScript', img: '/images/skills/javascript.png' },
+  { name: 'TypeScript', img: '/images/skills/typescript.png' },
+  { name: 'Vue.js', img: '/images/skills/vue-js.png' },
+  { name: 'Nuxt.js', img: '/images/skills/nuxt-js.png' },
+  { name: 'Node.js', img: '/images/skills/nodejs.png' },
+  { name: 'TailwindCSS', img: '/images/skills/tailwind-css.png' },
+  { name: 'MongoDB', img: '/images/skills/mongo-db.png' },
+  { name: 'Python', img: '/images/skills/python.png' },
+  { name: 'React.js', img: '/images/skills/react.png' },
 ];
 
 // Function to convert RGB-(Red, Green, Blue) to  HSL-(Hue, Saturation, Lightness)
@@ -111,7 +100,7 @@ const SkillsSection = () => {
 
   return (
     <section id="skills">
-      <div className="container mx-auto py-12">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="lg:text-3xl text-2xl font-bold" data-aos="fade-right" data-aos-duration="1900">
             Skills

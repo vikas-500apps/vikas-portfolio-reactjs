@@ -28,7 +28,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/vikas-kulari-16013b198/"
               target="_blank"
               rel="noreferrer"
-              className="w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 hover:translate-y-[-4px] text-gray-500 hover:bg-blue-600 hover:text-white rounded-full"
+              className="w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 hover:translate-y-[-4px] text-gray-500 hover:bg-blue-800 hover:text-white rounded-full"
             >
               <i className="ri-linkedin-fill"></i>
             </a>

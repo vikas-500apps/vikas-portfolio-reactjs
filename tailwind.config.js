@@ -10,16 +10,19 @@ module.exports = {
       },
       keyframes: {
         glow: {
-          '0%, 100%': { borderColor: 'transparent' },
-          '50%': { borderColor: 'currentColor' },
+          "0%, 100%": { borderColor: "transparent" },
+          "50%": { borderColor: "currentColor" },
+        },
+        loopScroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
-        glow: 'glow 1.5s ease-in-out infinite',
+        glow: "glow 1.5s ease-in-out infinite",
+        "loop-scroll": "loopScroll 20s linear infinite",
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

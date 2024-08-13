@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4 lg:pt-[120px] lg:pb-[90px] py-[70px]" id="contact">
+    <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4 lg:pb-[90px]" id="contact">
       <div className="text-center mb-[70px]">
         <h1 className="flex flex-col">
           <span className="lg:text-[36px] leading-[1.7] text-[30px] font-bold" data-aos="fade-up" data-aos-duration="1900">Get in Touch</span>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../../assets/data/portfolioData";
+import { portfolios } from "../../assets/data/portfolioData";
 import Modal from "./Modal";
 
 const RecentProjects = ({ openModal, closeModal }) => {
@@ -19,7 +19,7 @@ const RecentProjects = ({ openModal, closeModal }) => {
   return (
     <>
       <section id="projects">
-        <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4 py-[70px]">
+        <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4">
           <div className="text-center mb-[70px]">
             <h1 className="flex flex-col">
               <span
@@ -31,12 +31,13 @@ const RecentProjects = ({ openModal, closeModal }) => {
               </span>
             </h1>
             <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-[1.7]">
-              Crafting Cutting-Edge User Interfaces and Elevating Mobile App Experiences
+              Crafting Cutting-Edge User Interfaces and Elevating Mobile App
+              Experiences
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-3 md:grid-cols-2">
-            {data?.slice(0, nextItems)?.map((item, index) => (
+            {portfolios?.slice(0, nextItems)?.map((item, index) => (
               <div
                 key={index}
                 className="relative group rounded-lg overflow-hidden bg-white shadow-lg"
@@ -69,14 +70,16 @@ const RecentProjects = ({ openModal, closeModal }) => {
                     </a>
                   </h3>
                   <p className="text-neutral-600 line-clamp-3">
-                    {item.description.length > 200 ? item.description.slice(0, 200) + "..." : item.description}
+                    {item.description.length > 200
+                      ? item.description.slice(0, 200) + "..."
+                      : item.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {nextItems < data.length && (
+          {nextItems < portfolios.length && (
             <div className="text-center mt-6">
               <button
                 onClick={loadMoreRecentProject}
@@ -88,8 +91,14 @@ const RecentProjects = ({ openModal, closeModal }) => {
           )}
         </div>
 
-        {showModal && <Modal setShowModal={setShowModal} activeID={activeID} openModal={openModal}
-              closeModal={closeModal} />}
+        {showModal && (
+          <Modal
+            setShowModal={setShowModal}
+            activeID={activeID}
+            openModal={openModal}
+            closeModal={closeModal}
+          />
+        )}
       </section>
     </>
   );

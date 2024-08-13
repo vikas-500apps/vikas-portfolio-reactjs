@@ -2,15 +2,12 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import hireme1 from "../../assets/images/hireme-1.jpeg";
-import hireme2 from "../../assets/images/hireme-2.png";
-import hireme3 from "../../assets/images/hireme-3.jpeg";
 
 // Define array of image URLs
 const imageUrls = [
-  hireme1,
-  hireme2,
-  hireme3,
+  '/images/hireme-1.jpeg',
+  '/images/hireme-2.jpeg',
+  '/images/hireme-3.jpeg',
 ];
 
 const ContactModal = ({ isOpen, onClose }) => {
@@ -73,7 +70,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div className={`w-full h-full fixed top-0 left-0 z-10 ${isOpen ? '' : 'hidden'}`} style={{ backgroundColor: isOpen ? 'rgba(255, 255, 255, 0.1)' : 'transparent', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-      <div className="max-w-[95%] sm:max-w-[1000px] absolute top-1/2 left-1/2 z-20 bg-white rounded-lg transform -translate-x-1/2 -translate-y-1/2 lg:w-1/2 p-8 w-full border-2 border-primaryColor flex flex-col md:flex-row">
+      <div className="max-w-[95%] sm:max-w-[1000px] absolute top-1/2 left-1/2 z-20 bg-white rounded-lg transform -translate-x-1/2 -translate-y-1/2 lg:w-1/2 p-8 md:p-0 w-full border-2 border-transparent flex flex-col md:flex-row">
         {/* Image side */}
         <div className="w-full md:w-1/2 hidden md:block">
           <figure className="h-full w-full">
@@ -82,7 +79,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
         
         {/* Contact form side */}
-        <div className="w-full md:w-1/2 pl-0 md:pl-5 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 pl-0 md:pl-5 p-8 flex flex-col justify-center">
           <h2 className="flex flex-col">
             <span className="lg:text-[36px] leading-[1.7] text-[30px] font-bold">Get in Touch</span>
           </h2>
