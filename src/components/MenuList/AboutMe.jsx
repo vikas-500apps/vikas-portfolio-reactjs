@@ -89,6 +89,31 @@ const Home = () => {
             >
               {AboutMe.description}
             </p>
+             {/* Social Media Section */}
+          <div
+            className="flex items-center gap-4 mt-4"
+            data-aos="fade-up"
+            data-aos-duration="1900"
+          >
+            <span className="text-primaryColor mt-6 text-xl font-[600] mb-5">
+              Follow Me:
+            </span>
+            <div className="flex space-x-3">
+              {AboutMe.socialLinks.map(
+                ({ name, url, iconClass, hoverColor }) => (
+                  <a
+                    key={name}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 hover:translate-y-[-4px] text-gray-500 ${hoverColor} rounded-full`}
+                  >
+                    <i className={iconClass}></i>
+                  </a>
+                )
+              )}
+            </div>
+          </div>
           </div>
           {/* Right Section */}
           <div className="basis-1/3 mt-10 sm:mt-0">
@@ -158,32 +183,6 @@ const Home = () => {
                 </span>
               </div>
             ))}
-          </div>
-
-          {/* Social Media Section */}
-          <div
-            className="flex items-center gap-9 mt-4"
-            data-aos="fade-up"
-            data-aos-duration="1900"
-          >
-            <span className="text-primaryColor mt-6 text-xl font-[600] mb-5">
-              Follow Me:
-            </span>
-            <div className="flex space-x-3">
-              {AboutMe.socialLinks.map(
-                ({ name, url, iconClass, hoverColor }) => (
-                  <a
-                    key={name}
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 hover:translate-y-[-4px] text-gray-500 ${hoverColor} rounded-full`}
-                  >
-                    <i className={iconClass}></i>
-                  </a>
-                )
-              )}
-            </div>
           </div>
         </div>
       </div>

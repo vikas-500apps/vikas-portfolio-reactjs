@@ -14,6 +14,17 @@ const skills = [
   { name: 'React.js', img: '/images/skills/react.png' },
 ];
 
+const Badge = ({ color, text }) => {
+  return (
+    <span className={`inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset ring-${color}`}>
+      <svg viewBox="0 0 6 6" aria-hidden="true" className="h-1.5 w-1.5 animate-pulse" style={{ fill: color }}>
+        <circle r={3} cx={3} cy={3} />
+      </svg>
+      {text}
+    </span>
+  );
+};
+
 // Function to convert RGB-(Red, Green, Blue) to  HSL-(Hue, Saturation, Lightness)
 const rgbToHsl = (r, g, b) => {
   r /= 255; g /= 255; b /= 255;
@@ -102,10 +113,10 @@ const SkillsSection = () => {
     <section id="skills">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="lg:text-3xl text-2xl font-bold" data-aos="fade-right" data-aos-duration="1900">
+          <h2 className="lg:text-3xl text-2xl font-bold" data-aos="fade-up" data-aos-duration="1900">
             Skills
           </h2>
-          <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-relaxed">
+          <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-relaxed" data-aos="fade-up" data-aos-duration="1900">
             Skilled in front-end web development, specializing in creating modern, responsive designs with a focus on user experience.
           </p>
         </div>
@@ -117,7 +128,7 @@ const SkillsSection = () => {
               style={{ borderColor: colors[index] }}
             >
               <img src={skill.img} alt={skill.name} className="w-12 h-12 mb-2" />
-              <p className="text-center text-sm font-medium cursor-text">{skill.name}</p>
+              <Badge color={colors[index]} text={skill.name} />
             </div>
           ))}
         </div>

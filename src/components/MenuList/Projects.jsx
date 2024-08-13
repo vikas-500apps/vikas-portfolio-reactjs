@@ -24,13 +24,13 @@ const RecentProjects = ({ openModal, closeModal }) => {
             <h1 className="flex flex-col">
               <span
                 className="lg:text-[36px] leading-[1.7] text-[30px] font-bold"
-                data-aos="fade-right"
+                data-aos="fade-up"
                 data-aos-duration="1900"
               >
                 Projects
               </span>
             </h1>
-            <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-[1.7]">
+            <p className="text-base text-gray-500 font-normal max-w-lg mx-auto leading-[1.7]" data-aos="fade-up" data-aos-duration="1900">
               Crafting Cutting-Edge User Interfaces and Elevating Mobile App
               Experiences
             </p>

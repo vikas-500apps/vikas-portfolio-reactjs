@@ -67,7 +67,7 @@ const Header = () => {
                     activeMenuItem === item.name ? 'text-primaryColor' : 'text-smallTextColor'
                   }`}
                 >
-                  <i className={`${item.icon} text-2xl`} />
+                  <i className={`${item.icon} text-xl`} />
                   <span className="block text-xs capitalize">{item.name}</span>
                 </Link>
               </li>

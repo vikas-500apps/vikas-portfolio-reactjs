@@ -71,14 +71,8 @@ const AboutMe = {
       hoverColor: "hover:bg-pink-600 hover:text-white",
     },
     {
-      name: "Twitter",
-      url: "https://x.com",
-      iconClass: "ri-twitter-x-fill",
-      hoverColor: "hover:bg-gray-800 hover:text-white",
-    },
-    {
       name: "YouTube",
-      url: "https://www.youtube.com",
+      url: "https://www.youtube.com/@gharpe3d",
       iconClass: "ri-youtube-fill",
       hoverColor: "hover:bg-red-600 hover:text-white",
     },
