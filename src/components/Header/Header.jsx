@@ -54,11 +54,11 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <ul className="flex justify-around items-center py-2">
             {[
-              { name: 'about', icon: 'ri-user-line' },
-              { name: 'experience', icon: 'ri-graduation-cap-line' },
+              { name: 'about', icon: 'ri-user-fill' },
+              { name: 'experience', icon: 'ri-graduation-cap-fill' },
               { name: 'skills', icon: 'ri-lightbulb-flash-fill' },
-              { name: 'projects', icon: 'ri-briefcase-line' },
-              { name: 'contact', icon: 'ri-mail-line' },
+              { name: 'projects', icon: 'ri-briefcase-fill' },
+              { name: 'contact', icon: 'ri-mail-fill' },
             ].map((item) => (
               <li key={item.name}>
                 <Link
