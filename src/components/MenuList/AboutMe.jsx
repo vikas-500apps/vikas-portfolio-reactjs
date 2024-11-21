@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { AboutMe } from "../../assets/data/portfolioData"; // Update with the actual path
@@ -19,7 +19,10 @@ const skills = [
 
 const Home = () => {
   const softwareEngineerRef = useRef(null);
+  const [bouncingIndex, setBouncingIndex] = useState(null); // Track which icon is bouncing
+  const [isHovered, setIsHovered] = useState(false); // Track hover state
 
+  // Typewriter effect for role text
   useEffect(() => {
     const text = AboutMe.role;
     let index = 0;
@@ -37,9 +40,29 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Start random bouncing effect for social media icons
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        const randomIndex = Math.floor(Math.random() * AboutMe.socialLinks.length);
+        setBouncingIndex(randomIndex); // Randomly select an index to bounce
+      }
+    }, 1000); // Change icon every second (adjust this as needed)
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [isHovered]); // Restart interval when hover state changes
+
+  const handleMouseEnter = () => {
+    setIsHovered(true); // Stop random bouncing on hover
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false); // Resume random bouncing after hover ends
+  };
+
   return (
     <section className="pt-0" id="about">
-      <div className="container pt-14">
+      <div className="container">
         <div className="md:flex items-center justify-between sm:flex-col md:flex-row">
           {/* Left Section */}
           <div className="w-full md:basis-1/2">
@@ -89,31 +112,34 @@ const Home = () => {
             >
               {AboutMe.description}
             </p>
-             {/* Social Media Section */}
-          <div
-            className="flex items-center gap-4 mt-4"
-            data-aos="fade-up"
-            data-aos-duration="1900"
-          >
-            <span className="text-primaryColor mt-6 text-xl font-[600] mb-5">
-              Follow Me:
-            </span>
-            <div className="flex space-x-3">
-              {AboutMe.socialLinks.map(
-                ({ name, url, iconClass, hoverColor }) => (
+
+            {/* Social Media Section */}
+            <div
+              className="flex items-center gap-4 mt-4"
+              data-aos="fade-up"
+              data-aos-duration="1900"
+            >
+              <span className="text-primaryColor mt-6 text-xl font-[600] mb-5">
+                Follow Me:
+              </span>
+              <div className="flex space-x-3">
+                {AboutMe.socialLinks.map(({ name, url, iconClass, hoverColor }, index) => (
                   <a
                     key={name}
                     href={url}
                     target="_blank"
                     rel="noreferrer"
-                    className={`w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 hover:translate-y-[-4px] text-gray-500 ${hoverColor} rounded-full`}
+                    className={`w-[40px] h-[40px] cursor-pointer border border-gray-100/20 flex justify-center items-center shadow-md transition-all ease-linear duration-200 
+                    ${bouncingIndex === index && !isHovered ? `bouncing` : ""} 
+                    text-gray-500 ${hoverColor} rounded-full`}
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave} 
                   >
                     <i className={iconClass}></i>
                   </a>
-                )
-              )}
+                ))}
+              </div>
             </div>
-          </div>
           </div>
           {/* Right Section */}
           <div className="basis-1/3 mt-10 sm:mt-0">

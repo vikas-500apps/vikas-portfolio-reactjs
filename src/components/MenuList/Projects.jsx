@@ -18,7 +18,7 @@ const RecentProjects = ({ openModal, closeModal }) => {
 
   return (
     <>
-      <section id="projects">
+      <div id="projects">
         <div className="2xl:max-w-[1320px] w-[95vw] mx-auto px-4">
           <div className="text-center mb-[70px]">
             <h1 className="flex flex-col">
@@ -99,7 +99,7 @@ const RecentProjects = ({ openModal, closeModal }) => {
             closeModal={closeModal}
           />
         )}
-      </section>
+      </div>
     </>
   );
 };

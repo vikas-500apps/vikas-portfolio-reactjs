@@ -110,7 +110,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section id="skills">
+    <div id="skills">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="lg:text-3xl text-2xl font-bold" data-aos="fade-up" data-aos-duration="1900">
@@ -133,7 +133,7 @@ const SkillsSection = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

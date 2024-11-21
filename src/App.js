@@ -26,8 +26,8 @@ function Loader() {
     >
       <div className="relative flex h-full w-full items-center justify-center">
         <div className="flex flex-col items-center">
-          <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black">
-            Loading, please wait...
+          <p className="z-10 whitespace-pre-wrap text-center text-4xl font-medium tracking-tighter text-neutral-700">
+            Loading . . .
           </p>
           <Ripple />
         </div>

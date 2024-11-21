@@ -54,3 +54,20 @@ section {
   animation: scroll 20s linear infinite;
   /* Adjust the duration to control the scrolling speed */
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bouncing {
+  animation: bounce 1s infinite;
+}
+
+.bounce-stop {
+  animation: none;
+}
